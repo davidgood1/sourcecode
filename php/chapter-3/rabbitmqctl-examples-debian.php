@@ -17,7 +17,6 @@ define('PASS', 'guest');
 define('VHOST', '/');
 
 $conn = new AMQPStreamConnection(HOST, PORT, USER, PASS, VHOST);
-//$conn = new AMQPConnection(HOST, PORT, USER, PASS);
 $channel = $conn->channel();
 
 $channel->exchange_declare('logs-exchange', 'topic', false, true, false);
